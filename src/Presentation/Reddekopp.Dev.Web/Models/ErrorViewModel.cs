@@ -1,6 +1,6 @@
 using System;
 
-namespace Reddekopp.Dev.Models
+namespace Reddekopp.Dev.Web.Models
 {
     public class ErrorViewModel
     {

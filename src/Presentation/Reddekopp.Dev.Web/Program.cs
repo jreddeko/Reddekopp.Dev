@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Reddekopp.Dev
+namespace Reddekopp.Dev.Web
 {
     public class Program
     {
