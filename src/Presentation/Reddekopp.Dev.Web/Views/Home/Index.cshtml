@@ -1,8 +1,13 @@
-﻿@{
+﻿@model IndexViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<main role="main">
+    <div class="container">
+        @await Html.PartialAsync("_Intro", Model)
+        @await Html.PartialAsync("_About", Model)
+        @await Html.PartialAsync("_Experience", Model)
+        @await Html.PartialAsync("_Portfolio", Model)
+    </div>
+</main>
