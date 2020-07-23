@@ -1,2 +1,2 @@
 # Reddekopp.Dev
- My portfolio site
+ My portfolio site written is aspnetcore
