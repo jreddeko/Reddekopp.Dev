@@ -1,61 +1,34 @@
-﻿<section id="experience">
-    <h1 class="display-4">Experience</h1>
-    <div class="card mb-3">
-        <div class="card-header">
-            <div class="d-flex justify-content-between">
-                <span><a href="https://www.wddc.com" target="_blank">Western Drug Distribution Center Ltd.</a></span>
-                <span>Software developer</span>
+﻿@model IndexViewModel.ExperienceViewModel
+
+<section id="experience" class="bg-light">
+    <div class="container">
+        <h1 class="display-4">Experience</h1>
+        @foreach (var experience in Model.Experiences)
+        {
+            <div class="card mb-3">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-12 col-md-8">
+                            <p class="h5"><a href="@experience.CompanyUrl" target="_blank">@experience.CompanyName</a></p>
+                        </div>
+                        <div class="col-12">
+                            @experience.JobTitle
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">@experience.CompanyInfo</p>
+                    <ul>
+                        @foreach (var lineItem in experience.LineItems)
+                        {
+                            <li>@lineItem</li>
+                        }
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    @experience.GetTimeAtJobString()
+                </div>
             </div>
-        </div>
-        <div class="card-body">
-            <p class="card-text">Nationwide cooperative of vets.</p>
-            <ul>
-                <li>Created an eCommerce platform that provides our clients with their own customized web store (IIS, SQL Server, .NET MVC, Stripe)</li>
-                <li>Built and maintained a production scale API that handled shipping, ordering, and receiving  (IIS, .NET Core Web Api, Swagger)</li>
-                <li>Mentored junior and intermediate developers guiding their project development</li>
-                <li>Collaborated with stakeholders by scoping and gathering requirements for our eCommerce platform</li>
-                <li>Introduced and achieved buyin for Git/GitHub as our version control system</li>
-            </ul>
-        </div>
-        <div class="card-footer">
-            January 2017 to Present
-        </div>
-    </div>
-    <div class="card mb-3">
-        <div class="card-header">
-            <div class="d-flex justify-content-between">
-                <span><a href="https://www.westcanadian.com/" target="_blank">West Canadian Digital Imaging</a></span>
-                <span>Software developer</span>
-            </div>
-        </div>
-        <div class="card-body">
-            <p class="card-text">Independent digital printing, graphic design, microfilming, document management, and digital imaging operations.</p>
-            <ul>
-                <li>Created and maintained our document capture application (C#, EMC Captiva)</li>
-                <li>Lead developer for Government of Alberta Motor Vehicles enterprise information management app</li>
-                <li>Developed data management standards, implementing best practices for data architecture, governance and processes</li>
-            </ul>
-        </div>
-        <div class="card-footer">
-            December 2014 to December 2016
-        </div>
-    </div>
-    <div class="card mb-3">
-        <div class="card-header">
-            <div class="d-flex justify-content-between">
-                <span><a href="https://www.teck.com/" target="_blank">Teck</a></span>
-                <span>CO-OP Software Developer</span>
-            </div>
-        </div>
-        <div class="card-body">
-            <p class="card-text">Teck is Canada's largest diversified mining company and is committed to responsible development. It has major business units focused on copper, metallurgical coal, zinc, gold and energy.</p>
-            <ul>
-                <li>Created a dashboard application to improve site safety and efficiency.  (C#, SQL server)</li>
-                <li>Integrated GPS receivers on equipment with a GIS application to see status and location of equipment in realtime</li>
-            </ul>
-        </div>
-        <div class="card-footer">
-            January 2012 to September 2013
-        </div>
+        }
     </div>
 </section>

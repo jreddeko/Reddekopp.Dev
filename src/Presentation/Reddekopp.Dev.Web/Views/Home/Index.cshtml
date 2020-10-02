@@ -1,13 +1,21 @@
 ﻿@model IndexViewModel
+
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
+
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = Localizer["Title"];
 }
 
-<main role="main">
-    <div class="container">
-        @await Html.PartialAsync("_Intro", Model)
-        @await Html.PartialAsync("_About", Model)
-        @await Html.PartialAsync("_Experience", Model)
-        @await Html.PartialAsync("_Portfolio", Model)
+<section id="intro">
+    <div class="p-5 text-center">
+        <h1 class="display-4">Full stack developer</h1>
+        <p class="lead text-muted">
+            @Localizer["IntroMessage"]
+        </p>
+        <img src="~/img/avataaars.png" class="img-avatar"/>
     </div>
-</main>
+</section>
+<partial name="_Experience" for="Experience" />
+<partial name="_Portfolio" />
